@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/all.css">
+    <link rel="stylesheet" href="CSS/principle.css">
+    <link rel="icon" href="img/MEMS_LOGO.png">
+    <title>EMS - Principle</title>
+</head>
+<body>
+    
+    <div class="screen">
+        <div class="screen-menu">
+            <div class="screen-menu-logo"></div>
+            <div class="screen-menu-options">
+                <p class="screen-menu-options-opt hover">Dashboard</p>
+                <p class="screen-menu-options-opt">Schedule</p>
+                <p class="screen-menu-options-opt">Teachers</p>
+                <p class="screen-menu-options-opt">Students</p>
+                <p class="screen-menu-options-opt">Classes</p>
+                <p class="screen-menu-options-opt">Subjects</p>
+                <p class="screen-menu-options-opt">Exams</p>
+                <p class="screen-menu-options-opt" onclick="document.location=`index.html`">Log out</p>
+            </div>
+        </div>
+
+        <!-- dashboard-screen -->
+        <div class="screen-view" id="dashboard-screen">
+            <div class="screen-view-section">
+                <h3 class="section-header">Today's Schedule</h3>
+                <div class="tasks">
+                    <div class="task">
+                        <h5 class="title">Class 1: Algorithms</h5>
+                        <div class="ok-btn">10:00 AM</div>
+                    </div>
+                    <div class="task">
+                        <h5 class="title">Class 3: Data Structure</h5>
+                        <div class="ok-btn">2:00 PM</div>
+                    </div>
+                    <div class="task">
+                        <h5 class="title">Class 2: Cancelled</h5>
+                        <div class="ok-btn">4:00 PM</div>
+                    </div>
+                </div>
+            </div>
+            <div class="screen-view-section">
+                <div class="screen-view-section-small">
+                    <h3 class="section-header">Total Teachers</h3>
+                    <div class="section-icon"></div>
+                    <h3 class="section-num" id="teachersCounter">0</h3>
+                </div>
+                <div class="screen-view-section-small">
+                    <h3 class="section-header">Total Students</h3>
+                    <div class="section-icon2"></div>
+                    <h3 class="section-num" id="studentsCounter">0</h3>
+                </div>
+            </div>
+            <div class="screen-view-section">
+                <h3 class="section-header">Statistics</h3>
+                <div class="progress-bar">
+                    <progress value="75" min="0" max="100" style="visibility:hidden;height:0;width:0;">75%</progress>
+                  </div>
+                  <h3 style="
+                  color: white;
+                  margin-left: 100px;
+                  ">Attendence Rate</h3>
+            </div>
+        </div>
+
+        <!-- schedule-screen -->
+        <div class="screen-view" id="schedule-screen" style="display: none;">
+            <div class="screen-view-section">
+                <h3 class="section-header">Schedule</h3>
+                <button id="AddSlotFormBTN">Add Slot</button>
+                <div class="schedule-table">
+                    <div class="schedule-table-hours-side">
+                        <div class="hours-side-block">Time Slots</div>
+                        <div class="hours-side-block"> 8 - 10</div>
+                        <div class="hours-side-block"> 10 - 12</div>
+                        <div class="hours-side-block"> 12 - 2</div>
+                        <div class="hours-side-block"> 2 - 4</div>
+                        <div class="hours-side-block"> 4 - 6</div>
+                        <div class="hours-side-block"> 6 - 8</div>
+                    </div>
+                    <div class="schedule-table-days-side">
+                        <div class="days-side-block"> Saturday</div>
+                        <div class="days-side-block"> Sunday</div>
+                        <div class="days-side-block"> Monday</div>
+                        <div class="days-side-block"> Tuesday</div>
+                        <div class="days-side-block"> Wednesday</div>
+                        <div class="days-side-block"> Thursday</div>
+                    </div>
+                    <div class="schedule-table-timeslots">
+                        <div class="time-slot">
+                            <h5 class="event-name">Lecture 1</h5>
+                            <p class="Teacher-name">Dr. Merna Omran</p>
+                            <p class="class-name">Classroom 1</p>
+                        </div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot">
+                            <h5 class="event-name">Lecture 2</h5>
+                            <p class="Teacher-name">Dr. Heba Waheed</p>
+                            <p class="class-name">Classroom 3</p>
+                        </div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot">
+                            <h5 class="event-name">Lecture 3</h5>
+                            <p class="Teacher-name">Dr. Abdelrahman</p>
+                            <p class="class-name">Classroom 2</p>
+                        </div>
+                        <div class="time-slot">
+                            <h5 class="event-name">Lecture 4</h5>
+                            <p class="Teacher-name">Dr. Rehab Fadel</p>
+                            <p class="class-name">Classroom 1</p>
+                        </div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot">
+                            <h5 class="event-name">Lecture 5</h5>
+                            <p class="Teacher-name">Dr. Ziad Amr</p>
+                            <p class="class-name">Classroom 3</p>
+                        </div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot">
+                            <h5 class="event-name">Lecture 6</h5>
+                            <p class="Teacher-name">Dr. Nada Hamdy</p>
+                            <p class="class-name">Classroom 2</p>
+                        </div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                        <div class="time-slot"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="AddSlotForm" id="AddSlotForm" style="display: none;">
+                <form action="">
+                    <input type="number" placeholder="Hour">
+                    <input type="number" placeholder="Day">
+                    <button type="submit">Add Slot</button>
+                </form>
+                <div class="txt-warning" style="display: none;">This is Busy Time</div>
+            </div>
+        </div>
+
+        <!-- teachers-screen -->
+        <div class="screen-view" id="teachers-screen" style="display: none;">
+            <div class="screen-view-section">
+                <h3 class="section-header">Database</h3>
+                <button>Add Teacher</button>
+                <div class="database-scroll">
+                    <table class="teacher-database-content">
+                        <thead>
+                            <tr>
+                                <td>ID</td>
+                                <td>Name</td>
+                                <td>Phone</td>
+                                <td>Salary</td>
+                                <td id="txtcenter">View</td>
+                                <td id="txtcenter">Edit</td>
+                                <td id="txtcenter">Delete</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Abdelrahman</td>
+                                <td>01011424436</td>
+                                <td>20,000</td>
+                                <td id="txtcenter" ><i class="fa-solid fa-eye"></i></td>
+                                <td id="txtcenter" ><i class="fa-regular fa-pen-to-square"></i></td>
+                                <td id="txtcenter" ><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Merna</td>
+                                <td>01011424436</td>
+                                <td>20,000</td>
+                                <td id="txtcenter" ><i class="fa-solid fa-eye"></i></td>
+                                <td id="txtcenter" ><i class="fa-regular fa-pen-to-square"></i></td>
+                                <td id="txtcenter" ><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Heba</td>
+                                <td>01011424436</td>
+                                <td>20,000</td>
+                                <td id="txtcenter" ><i class="fa-solid fa-eye"></i></td>
+                                <td id="txtcenter" ><i class="fa-regular fa-pen-to-square"></i></td>
+                                <td id="txtcenter" ><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Rehab</td>
+                                <td>01011424436</td>
+                                <td>20,000</td>
+                                <td id="txtcenter" ><i class="fa-solid fa-eye"></i></td>
+                                <td id="txtcenter" ><i class="fa-regular fa-pen-to-square"></i></td>
+                                <td id="txtcenter" ><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Ziad</td>
+                                <td>01011424436</td>
+                                <td>20,000</td>
+                                <td id="txtcenter" ><i class="fa-solid fa-eye"></i></td>
+                                <td id="txtcenter" ><i class="fa-regular fa-pen-to-square"></i></td>
+                                <td id="txtcenter" ><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Nada</td>
+                                <td>01011424436</td>
+                                <td>20,000</td>
+                                <td id="txtcenter" ><i class="fa-solid fa-eye"></i></td>
+                                <td id="txtcenter" ><i class="fa-regular fa-pen-to-square"></i></td>
+                                <td id="txtcenter" ><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>person</td>
+                                <td>01011424436</td>
+                                <td>20,000</td>
+                                <td id="txtcenter" ><i class="fa-solid fa-eye"></i></td>
+                                <td id="txtcenter" ><i class="fa-regular fa-pen-to-square"></i></td>
+                                <td id="txtcenter" ><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>person</td>
+                                <td>01011424436</td>
+                                <td>20,000</td>
+                                <td id="txtcenter" ><i class="fa-solid fa-eye"></i></td>
+                                <td id="txtcenter" ><i class="fa-regular fa-pen-to-square"></i></td>
+                                <td id="txtcenter" ><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>person</td>
+                                <td>01011424436</td>
+                                <td>20,000</td>
+                                <td id="txtcenter" ><i class="fa-solid fa-eye"></i></td>
+                                <td id="txtcenter" ><i class="fa-regular fa-pen-to-square"></i></td>
+                                <td id="txtcenter" ><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                        </tbody>
+                        <tfoot></tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Student-screen -->
+        <div class="screen-view" id="students-screen" style="display: none;">
+            <div class="screen-view-section">
+                <h3 class="section-header">Database</h3>
+                <button>Add Student</button>
+                <div class="database-scroll">
+                    <table class="students-database-content">
+                        <thead>
+                            <tr>
+                                <td>ID</td>
+                                <td>Name</td>
+                                <td>Phone</td>
+                                <td>Level</td>
+                                <td>GPA</td>
+                                <td id="txtcenter" >Pass/Fail</td>
+                                <td id="txtcenter">View</td>
+                                <td id="txtcenter">Edit</td>
+                                <td id="txtcenter">Delete</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Abdelrahman</td>
+                                <td>01011424436</td>
+                                <td>4</td>
+                                <td>2.53</td>
+                                <td id="txtcenter"  class="pass">Pass</td>
+                                <td id="txtcenter" ><i class="fa-solid fa-eye"></i></td>
+                                <td id="txtcenter" ><i class="fa-regular fa-pen-to-square"></i></td>
+                                <td id="txtcenter" ><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Merna</td>
+                                <td>01011424436</td>
+                                <td>4</td>
+                                <td>2.22</td>
+                                <td id="txtcenter"  class="pass">Pass</td>
+                                <td id="txtcenter" ><i class="fa-solid fa-eye"></i></td>
+                                <td id="txtcenter" ><i class="fa-regular fa-pen-to-square"></i></td>
+                                <td id="txtcenter" ><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Heba</td>
+                                <td>01011424436</td>
+                                <td>4</td>
+                                <td>2.4</td>
+                                <td id="txtcenter"  class="pass">Pass</td>
+                                <td id="txtcenter" ><i class="fa-solid fa-eye"></i></td>
+                                <td id="txtcenter" ><i class="fa-regular fa-pen-to-square"></i></td>
+                                <td id="txtcenter" ><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Rehab</td>
+                                <td>01011424436</td>
+                                <td>4</td>
+                                <td>2.7</td>
+                                <td id="txtcenter"  class="pass">Pass</td>
+                                <td id="txtcenter" ><i class="fa-solid fa-eye"></i></td>
+                                <td id="txtcenter" ><i class="fa-regular fa-pen-to-square"></i></td>
+                                <td id="txtcenter" ><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Ziad</td>
+                                <td>01011424436</td>
+                                <td>4</td>
+                                <td>3.8</td>
+                                <td id="txtcenter"  class="pass">Pass</td>
+                                <td id="txtcenter" ><i class="fa-solid fa-eye"></i></td>
+                                <td id="txtcenter" ><i class="fa-regular fa-pen-to-square"></i></td>
+                                <td id="txtcenter" ><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Nada</td>
+                                <td>01011424436</td>
+                                <td>4</td>
+                                <td>3.2</td>
+                                <td id="txtcenter"  class="pass">Pass</td>
+                                <td id="txtcenter" ><i class="fa-solid fa-eye"></i></td>
+                                <td id="txtcenter" ><i class="fa-regular fa-pen-to-square"></i></td>
+                                <td id="txtcenter" ><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>person</td>
+                                <td>01011424436</td>
+                                <td>4</td>
+                                <td>2.2</td>
+                                <td id="txtcenter"  class="fail">Fail</td>
+                                <td id="txtcenter" ><i class="fa-solid fa-eye"></i></td>
+                                <td id="txtcenter" ><i class="fa-regular fa-pen-to-square"></i></td>
+                                <td id="txtcenter" ><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>person</td>
+                                <td>01011424436</td>
+                                <td>4</td>
+                                <td>2.2</td>
+                                <td id="txtcenter"  class="fail">Fail</td>
+                                <td id="txtcenter" ><i class="fa-solid fa-eye"></i></td>
+                                <td id="txtcenter" ><i class="fa-regular fa-pen-to-square"></i></td>
+                                <td id="txtcenter" ><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>person</td>
+                                <td>01011424436</td>
+                                <td>4</td>
+                                <td>2.2</td>
+                                <td id="txtcenter"  class="fail">Fail</td>
+                                <td id="txtcenter" ><i class="fa-solid fa-eye"></i></td>
+                                <td id="txtcenter" ><i class="fa-regular fa-pen-to-square"></i></td>
+                                <td id="txtcenter" ><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                        </tbody>
+                        <tfoot></tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Classes-screen -->
+        <div class="screen-view" id="classes-screen" style="display: none;">
+            <div class="screen-view-section">
+                <h3 class="section-header">Classes</h3>
+                <div class="classes-section">
+                    <div class="classroom">
+                        <h3>Class 1</h3>
+                        <h5>Teacher: </h5>
+                        <h5>Number of Students: </h5>
+                        <button>Know More</button>
+                    </div>
+                    <div class="classroom">
+                        <h3>Class 2</h3>
+                        <h5>Teacher: </h5>
+                        <h5>Number of Students: </h5>
+                        <button>Know More</button>
+                    </div>
+                    <div class="classroom">
+                        <h3>Class 3</h3>
+                        <h5>Teacher: </h5>
+                        <h5>Number of Students: </h5>
+                        <button>Know More</button>
+                    </div>
+                    <div class="classroom">
+                        <h3>Class 4</h3>
+                        <h5>Teacher: </h5>
+                        <h5>Number of Students: </h5>
+                        <button>Know More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- subjects-screen -->
+        <div class="screen-view" id="subjects-screen" style="display: none;">
+            <div class="screen-view-section">
+                <h3 class="section-header">Subjects</h3>
+                <div class="subjects-section">
+                    <div class="subject">
+                        <h3>Subject 1</h3>
+                        <h5>Teacher: </h5>
+                        <h5>Number of Students: </h5>
+                        <button>Know More</button>
+                    </div>
+                    <div class="subject">
+                        <h3>Subject 2</h3>
+                        <h5>Teacher: </h5>
+                        <h5>Number of Students: </h5>
+                        <button>Know More</button>
+                    </div>
+                    <div class="subject">
+                        <h3>Subject 3</h3>
+                        <h5>Teacher: </h5>
+                        <h5>Number of Students: </h5>
+                        <button>Know More</button>
+                    </div>
+                    <div class="subject">
+                        <h3>Subject 4</h3>
+                        <h5>Teacher: </h5>
+                        <h5>Number of Students: </h5>
+                        <button>Know More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- exams-screen -->
+        <div class="screen-view" id="exams-screen" style="display: none;">
+            <div class="screen-view-section">
+                <h3 class="section-header">Exams</h3>
+                <button>Filter</button>
+                <div class="database-scroll">
+                    <table class="exams-database-content">
+                        <thead>
+                            <tr>
+                                <td>ID</td>
+                                <td>Name</td>
+                                <td>success rate</td>
+                                <td># of Students</td>
+                                <td>Examiner</td>
+                                <td id="txtcenter">View</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Exam 1</td>
+                                <td>success rate</td>
+                                <td># of Students</td>
+                                <td>Examiner</td>
+                                <td id="txtcenter" ><i class="fa-solid fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Exam 2</td>
+                                <td>success rate</td>
+                                <td># of Students</td>
+                                <td>Examiner</td>
+                                <td id="txtcenter" ><i class="fa-solid fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Exam 3</td>
+                                <td>success rate</td>
+                                <td># of Students</td>
+                                <td>Examiner</td>
+                                <td id="txtcenter" ><i class="fa-solid fa-eye"></i></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Exam 4</td>
+                                <td>success rate</td>
+                                <td># of Students</td>
+                                <td>Examiner</td>
+                                <td id="txtcenter" ><i class="fa-solid fa-eye"></i></td>
+                            </tr>
+                        </tbody>
+                        <tfoot></tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="JS/principle.js"></script>
+</body>
+</html>

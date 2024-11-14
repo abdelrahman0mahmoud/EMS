@@ -1,0 +1,133 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+:root{
+    --mainColor: #22668D;
+    --secondMainColor: #8ECDDD;
+    --lighterColor: #F4F27E;
+    --textColor:#fff;
+}
+
+body{
+    background-color: var(--secondMainColor);
+}
+/*=====*/
+.screen{
+    width: 100%;
+    height: 100vh;
+    
+    display: flex;
+}
+.screen-menu{
+    width: 20%;
+    height: 100%;
+    background-color: var(--mainColor);
+
+    position: relative;
+}
+.screen-menu-logo{
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/MEMS_LOGO.png);
+    background-size: cover;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    margin-top: 20px;
+}
+.screen-menu-options{
+    width: 100%;
+    height: fit-content;
+
+    position: absolute;
+
+    margin-top: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.screen-menu-options-opt{
+    width: 90%;
+    padding: 12px 0px;
+
+    text-align: center;
+    color: var(--textColor);
+    font-weight: 550;
+
+    transition: .2s;
+    cursor: pointer;
+}
+.screen-menu-options-opt.hover{
+    background-color: var(--secondMainColor);
+    color: black;
+    border-radius: 20px;
+}
+.screen-menu-options-opt:hover{
+    background-color: var(--secondMainColor);
+    color: black;
+    border-radius: 20px;
+}
+
+.screen-view {
+    width: 80%;
+    height: 100vh; 
+    overflow-y: auto; 
+    overflow-x: hidden; 
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.screen-view-section {
+    width: 100%;
+    height: 95%; 
+    background-color: var(--mainColor); 
+    border-radius: 20px;
+
+
+}
+.screen-view-section:nth-child(2){
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.screen-view-section-small{
+    width: 100%;
+    height: 48%;
+    background-color: var(--mainColor);
+    border-radius: 20px;
+
+    position: relative;
+}
+.section-header{
+    color: var(--textColor);
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+/*=======================================================================*/
+/*teachers screen*/
+#exams-screen .screen-view-section{width: 100%;}
+/*=======================================================================*/
+/*students screen*/
+#assignments-screen .screen-view-section{width: 100%;}
+/*=======================================================================*/
+/*classes screen*/
+#grades-screen .screen-view-section{width: 100%;}
+/*=======================================================================*/
+/*subjects screen*/
+#reports-screen .screen-view-section{width: 100%;}

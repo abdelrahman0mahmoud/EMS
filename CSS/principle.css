@@ -1,0 +1,661 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+:root{
+    --mainColor: #22668D;
+    --secondMainColor: #8ECDDD;
+    --lighterColor: #F4F27E;
+    --textColor:#fff;
+}
+
+body{
+    background-color: var(--secondMainColor);
+}
+/*=====*/
+.screen{
+    width: 100%;
+    height: 100vh;
+    
+    display: flex;
+}
+.screen-menu{
+    width: 20%;
+    height: 100%;
+    background-color: var(--mainColor);
+
+    position: relative;
+}
+.screen-menu-logo{
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/MEMS_LOGO.png);
+    background-size: cover;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    margin-top: 20px;
+}
+.screen-menu-options{
+    width: 100%;
+    height: fit-content;
+
+    position: absolute;
+
+    margin-top: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.screen-menu-options-opt{
+    width: 90%;
+    padding: 12px 0px;
+
+    text-align: center;
+    color: var(--textColor);
+    font-weight: 550;
+
+    transition: .2s;
+    cursor: pointer;
+}
+.screen-menu-options-opt.hover{
+    background-color: var(--secondMainColor);
+    color: black;
+    border-radius: 20px;
+}
+.screen-menu-options-opt:hover{
+    background-color: var(--secondMainColor);
+    color: black;
+    border-radius: 20px;
+}
+
+.screen-view {
+    width: 80%;
+    height: 100vh; 
+    overflow-y: auto; 
+    overflow-x: hidden; 
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.screen-view-section {
+    width: 65%;
+    height: 95%; 
+    background-color: var(--mainColor); 
+    border-radius: 20px;
+
+
+}
+.screen-view-section:nth-child(2){
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.screen-view-section-small{
+    width: 100%;
+    height: 48%;
+    background-color: var(--mainColor);
+    border-radius: 20px;
+
+    position: relative;
+}
+.section-header{
+    color: var(--textColor);
+    margin-top: 15px;
+    margin-left: 20px;
+}
+.section-icon{
+    width: 75px;
+    height: 75px;
+    background-image: url(../img/teacher.png);
+    background-size: cover;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.section-icon2{
+    width: 75px;
+    height: 75px;
+    background-image: url(../img/students.png);
+    background-size: cover;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.section-num{
+    color: var(--textColor);
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+/*=============================================================================*/
+.screen-view-section .tasks{
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.screen-view-section .tasks .task{
+    width: 90%;
+    height: 60px;
+    background-color: var(--secondMainColor);
+    border-radius: 25px;
+    padding: 0 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.screen-view-section .tasks .task .ok-btn{
+    background-color: green;
+    width: 75px;
+    padding: 10px;
+    border-radius: 15px;
+    color: var(--textColor);
+    text-align: center;
+    font-size: 13px;
+}
+.progress-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: 
+        radial-gradient(closest-side, var(--mainColor) 79%, transparent 80% 100%),
+        conic-gradient(var(--secondMainColor) 75%, white 0); 
+         
+    margin-left: 125px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.progress-bar::before {
+content: "83%";
+color: var(--textColor);
+}
+
+/*=================================================================================================*/
+/*schedule screen*/
+#schedule-screen .screen-view-section{
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#schedule-screen .section-header{
+    align-self: self-start;
+    margin-bottom: -30px;
+}
+#schedule-screen button{
+    margin: 10px 20px;
+    padding: 8px 25px;
+    border-radius: 10px;
+    border: 0px;
+    font-weight: bold;
+    background-color: var(--secondMainColor);
+    transition: .2s;
+}
+#schedule-screen button:hover{
+    cursor: pointer;
+    background-color: black;
+    color: #fff;
+}
+
+.schedule-table{
+    width: 98%;
+    height: 90%;
+    background-color: var(--secondMainColor);
+    border-radius: 20px;
+    margin-bottom: 5px;
+
+    position: relative;
+    
+}
+.schedule-table-hours-side{
+    width: 100%;
+    height: 40px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    position: absolute;
+    top: 0;
+
+    display: flex;
+    font-weight: bold;
+    font-size: 12px;
+    background-color: lightgray;
+}
+.schedule-table-hours-side .hours-side-block{
+    width: calc((100% - 50px)/6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.schedule-table-hours-side div:nth-child(1){
+    min-width: 50px;
+    max-width: 100px;
+    border-right: 1px solid black;
+}
+.schedule-table-days-side{
+    width: 100px;
+    height: calc(100% - 40px);
+    border-bottom-left-radius: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-weight: bold;
+    font-size: 12px;
+    background-color: lightgray;
+}
+
+
+.schedule-table-days-side .days-side-block{
+    height: calc(100% /6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid black;
+}
+
+.schedule-table-timeslots{
+    width: calc(100% - 100px);
+    height: calc(100% - 40px);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-bottom-right-radius: 20px;
+    background-color: var(--secondMainColor);
+
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 1fr means 1 fraction of the available space */
+    grid-template-rows: repeat(6, 1fr);
+
+}
+
+.schedule-table-timeslots .time-slot:last-child{
+    border-bottom-right-radius: 20px;
+}
+
+.time-slot{
+    border: .5px solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.time-slot .Teacher-name, .time-slot .class-name{
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.AddSlotForm{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: var(--mainColor);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.AddSlotForm form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.AddSlotForm form input{
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+.txt-warning{
+    color: red;
+}
+
+
+/*=======================================================================*/
+/*teachers screen*/
+#teachers-screen .screen-view-section{
+    width: 100%;
+    position: relative;
+}
+.database-scroll{
+    width: 100%;
+    height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 10px;
+}
+.database-scroll::-webkit-scrollbar{
+    width: 0px;
+}
+.teacher-database-content{
+    background-color: var(--secondMainColor);
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;
+    
+}
+.teacher-database-content thead{
+    font-weight: bold;
+}
+.teacher-database-content thead tr td{
+    background-color: gray;
+    border-radius: 10px;
+}
+.teacher-database-content td{
+    padding: 10px;
+    
+}
+.teacher-database-content i{
+    cursor: pointer;
+    transition: .2s;
+}
+.teacher-database-content i:hover{
+    opacity: .6;
+}
+#txtcenter{
+    text-align: center;
+}
+#teachers-screen button{
+    margin: 10px 20px;
+    padding: 8px;
+    border-radius: 10px;
+    border: 0px;
+    font-weight: bold;
+    background-color: var(--secondMainColor);
+    transition: .2s;
+}
+#teachers-screen button:hover{
+    cursor: pointer;
+    background-color: black;
+    color: #fff;
+}
+.fa-trash{
+    color: red;
+}
+/*=======================================================================*/
+/*students screen*/
+#students-screen .screen-view-section{
+    width: 100%;
+}
+.students-database-content{
+    background-color: var(--secondMainColor);
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;;
+}
+#students-screen button{
+    margin: 10px 20px;
+    padding: 8px;
+    border-radius: 10px;
+    border: 0px;
+    font-weight: bold;
+    background-color: var(--secondMainColor);
+    transition: .2s;
+}
+#students-screen button:hover{
+    cursor: pointer;
+    background-color: black;
+    color: #fff;
+}
+
+.students-database-content thead{
+    font-weight: bold;
+}
+.students-database-content thead tr td{
+    background-color: gray;
+    border-radius: 10px;
+}
+.students-database-content td{
+    padding: 10px;
+    margin: 0px 20px;
+    
+}
+.students-database-content i{
+    cursor: pointer;
+    transition: .2s;
+}
+.students-database-content i:hover{
+    opacity: .6;
+}
+.pass {
+    background-color: rgba(40, 210, 40, 0.807); 
+    color: green;
+    border-radius: 25px;
+    font-weight: bold;
+    
+}
+
+.fail{
+    background-color: lightcoral; 
+    color: red;
+    border-radius: 25px;
+    font-weight: bold;
+}
+/*=======================================================================*/
+/*classes screen*/
+#classes-screen .screen-view-section{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+#classes-screen .section-header{
+    align-self: start;
+}
+.classes-section{
+    width: 95%;
+    height: 85%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
+
+    padding: 10px;
+}
+.classes-section::-webkit-scrollbar{
+    width: 0;
+}
+.classroom{
+    width: 45%;
+    min-height: 150px;
+    background-color: var(--secondMainColor);
+    border-radius: 20px;
+    padding: 15px;
+}
+.classroom h3{
+    margin-bottom: 10px;
+}
+.classroom h5{
+    margin: 3px 0px;
+}
+
+.classroom button{
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+    background-color: var(--mainColor);
+    color: #fff;
+    transition: .2s;
+}
+.classroom button:hover{
+    cursor: pointer;
+    background-color: black;
+    color: var(--secondMainColor);
+    transform: scale(1.08);
+}
+
+
+
+
+
+
+
+
+
+
+
+/*=======================================================================*/
+/*subjects screen*/
+#subjects-screen .screen-view-section{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+#subjects-screen .section-header{
+    align-self: start;
+}
+.subjects-section{
+    width: 95%;
+    height: 85%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    padding: 10px;
+}
+.subjects-section::-webkit-scrollbar{
+    width: 0;
+}
+.subject{
+    width: 45%;
+    min-height: 150px;
+    background-color: var(--secondMainColor);
+    border-radius: 20px;
+    padding: 15px;
+}
+.subject h3{
+    margin-bottom: 10px;
+}
+.subject h5{
+    margin: 3px 0px;
+}
+
+.subject button{
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+    background-color: var(--mainColor);
+    color: #fff;
+    transition: .2s;
+}
+.subject button:hover{
+    cursor: pointer;
+    background-color: black;
+    color: var(--secondMainColor);
+    transform: scale(1.08);
+}
+
+
+
+
+/*=======================================================================*/
+/*exams screen*/
+#exams-screen .screen-view-section{
+    width: 100%;
+}
+
+.exams-database-content{
+    background-color: var(--secondMainColor);
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;;
+}
+#exams-screen button{
+    margin: 10px 20px;
+    padding: 8px;
+    border-radius: 10px;
+    border: 0px;
+    font-weight: bold;
+    background-color: var(--secondMainColor);
+    transition: .2s;
+}
+#exams-screen button:hover{
+    cursor: pointer;
+    background-color: black;
+    color: #fff;
+}
+
+.exams-database-content thead{
+    font-weight: bold;
+}
+.exams-database-content thead tr td{
+    background-color: gray;
+    border-radius: 10px;
+}
+.exams-database-content td{
+    padding: 10px;
+    margin: 0px 20px;
+    
+}
+.exams-database-content i{
+    cursor: pointer;
+    transition: .2s;
+}
+.exams-database-content i:hover{
+    opacity: .6;
+}
+
+/*=======================================================================*/

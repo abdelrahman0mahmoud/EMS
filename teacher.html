@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="all.css">
+    <link rel="stylesheet" href="CSS/teacher.css">
+    <link rel="icon" href="img/MEMS_LOGO.png">
+    <title>EMS - Teacher</title>
+</head>
+<body>
+
+    <div class="screen">
+        <div class="screen-menu">
+            <div class="screen-menu-logo"></div>
+            <div class="screen-menu-options">
+                <p class="screen-menu-options-opt hover">Dashboard</p>
+                <p class="screen-menu-options-opt">Exams</p>
+                <p class="screen-menu-options-opt">Assignments</p>
+                <p class="screen-menu-options-opt">Grades</p>
+                <p class="screen-menu-options-opt">Reports</p>
+                <p class="screen-menu-options-opt" onclick="document.location=`index.html`">Log out</p>
+            </div>
+        </div>
+
+        <!-- dashboard-screen -->
+        <div class="screen-view" id="dashboard-screen">
+            <div class="screen-view-section">
+                <h3 class="section-header">Dashboard</h3>
+            </div>
+        </div>
+
+        <!-- exams-screen -->
+        <div class="screen-view" id="exams-screen" style="display: none;">
+            <div class="screen-view-section">
+                <h3 class="section-header">Exams</h3>
+            </div>
+        </div>
+
+        <!-- assignments-screen -->
+        <div class="screen-view" id="assignments-screen" style="display: none;">
+            <div class="screen-view-section">
+                <h3 class="section-header">Assignments</h3>
+            </div>
+        </div>
+
+        <!-- grades-screen -->
+        <div class="screen-view" id="grades-screen" style="display: none;">
+            <div class="screen-view-section">
+                <h3 class="section-header">Students Grades</h3>
+            </div>
+        </div>
+        
+        <!-- reports-screen -->
+        <div class="screen-view" id="reports-screen" style="display: none;">
+            <div class="screen-view-section">
+                <h3 class="section-header">Reports</h3>
+            </div>
+        </div>
+    
+    <script src="JS/teacher.js"></script>
+</body>
+</html>

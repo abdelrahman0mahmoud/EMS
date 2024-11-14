@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/student.css">
+    <link rel="stylesheet" href="CSS/all.css">
+    <link rel="icon" href="img/MEMS_LOGO.png">
+    <title>EMS - Student</title>
+</head>
+<body>
+    
+
+      
+    <div class="screen">
+        <div class="screen-menu">
+            <div class="screen-menu-logo"></div>
+            <div class="screen-menu-options">
+                <p class="screen-menu-options-opt hover">Dashboard</p>
+                <p class="screen-menu-options-opt">My Courses</p>
+                <p class="screen-menu-options-opt">My Grades</p>
+                <p class="screen-menu-options-opt">My Exams</p>
+                <p class="screen-menu-options-opt">My Notes</p>
+                <p class="screen-menu-options-opt" onclick="document.location=`index.html`">Log out</p>
+            </div>
+        </div>
+
+        <!-- dashboard-screen -->
+        <div class="screen-view" id="dashboard-screen">
+            <div class="screen-view-section">
+                <h3 class="section-header">My Dashboard</h3>
+            </div>
+        </div>
+
+        <!-- My Courses-screen -->
+        <div class="screen-view" id="mycourses-screen" style="display: none;">
+            <div class="screen-view-section">
+                <h3 class="section-header">My Courses</h3>
+            </div>
+        </div>
+
+        <!-- My Grade-screen -->
+        <div class="screen-view" id="mygrades-screen" style="display: none;">
+            <div class="screen-view-section">
+                <h3 class="section-header">My Grades</h3>
+            </div>
+        </div>
+
+        <!-- My Exams-screen -->
+        <div class="screen-view" id="myexams-screen" style="display: none;">
+            <div class="screen-view-section">
+                <h3 class="section-header">My Exams</h3>
+            </div>
+        </div>
+
+        <!-- My Notes -->
+        <div class="screen-view" id="mynotes-screen" style="display: none;">
+            <div class="screen-view-section">
+                <h3 class="section-header">My Notes</h3>
+            </div>
+        </div>        
+
+    </div>
+    
+    <script src="JS/student.js"></script>
+</body>
+</html>
